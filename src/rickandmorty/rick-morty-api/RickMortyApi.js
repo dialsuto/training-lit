@@ -1,6 +1,6 @@
 import {LitElement, html} from 'lit';
-import './components/get-data.js';
-import './title-api.js';
+import '../components/get-data.js';
+import '../title-api/title-api.js';
 import style from './RickMortyStyle.js';
 
 export class RickMortyApi extends LitElement {
@@ -23,18 +23,18 @@ export class RickMortyApi extends LitElement {
     }
 
     _dataFormat(data) {
-        let personajes = [];
+        let characters = [];
 
-        data['results'].forEach(personaje => {
-            personajes.push({
-                image: personaje.image,
-                name: personaje.name,
-                species: personaje.species,
-                status: personaje.status
+        data['results'].forEach(character => {
+            characters.push({
+                image: character.image,
+                name: character.name,
+                species: character.species,
+                status: character.status
             });
         });
 
-        this.wiki = personajes;
+        this.wiki = characters;
     }
 
     render() {
@@ -53,12 +53,12 @@ export class RickMortyApi extends LitElement {
 
     get dataTemplate() {
         return html`
-            ${this.wiki.map(personaje => html`
+            ${this.wiki.map(character => html`
                 <div class="card">
                     <div class="card-content">
-                        <h2>${personaje.name}</h2>
-                        <img src="${personaje.image}" alt="">
-                        <div>${personaje.species} ${personaje.status}</div>
+                        <h2>${character.name}</h2>
+                        <img src="${character.image}" alt="">
+                        <div>${character.species} ${character.status}</div>
                     </div>
                 </div>
             `)}

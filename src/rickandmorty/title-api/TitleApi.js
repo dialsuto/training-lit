@@ -25,5 +25,3 @@ export class TitleApi extends LitElement {
         `;
     }
 }
-
-customElements.define('title-api', TitleApi);

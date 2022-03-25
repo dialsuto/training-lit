@@ -23,7 +23,6 @@ export default css`
     position: relative;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: all 0.3s cubic-bezier(.25 .8 .25 1);
   }
 
   .card:hover {
@@ -31,6 +30,6 @@ export default css`
   }
 
   .card img {
-    width: 70%;
+    width: 80%;
   }
 `;
